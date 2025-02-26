@@ -22,14 +22,19 @@
         {
             int elementsCount = 0;
             List<int> values = new List<int>();
+            List<int> newArray = new List<int>();
             for (int i = 0; i < array.Length; i++)
             {
                 if (array[i] == search)
                 {
                     elementsCount++;
                     values.Add(i);
-                    if (i > 0)
-                        (array[0], array[i]) = (array[i], array[0]);
+                    int value = array[i];
+                    for (int j = i; j > 0; j--)
+                    {
+                        array[j] = array[j - 1];
+                    }
+                    array[0] = value;
                 }
             }
             return (elementsCount, values);
