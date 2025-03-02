@@ -9,7 +9,7 @@ namespace zad_5
     internal class Student
     {
         public string Name { get; set; }
-        double Score { get; set; }
+        public double Score { get; set; }
 
     }
 }
